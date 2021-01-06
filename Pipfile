@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pillow = "*"
+gunicorn = "*"
+psycopg2 = "*"
+djangocms-admin-style = "*"
+pylint-django = "*"
+django-ckeditor = "*"
+django-allauth = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
