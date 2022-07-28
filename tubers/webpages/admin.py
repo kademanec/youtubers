@@ -13,6 +13,15 @@ class TeamAdmin(admin.ModelAdmin):
     search_fields=('first_name','role')
     list_filter = ('role',)
 
+class SliderAdmin(admin.ModelAdmin):
 
-admin.site.register(Slider)
+    def myphoto(self,object):
+        return format_html('<img src="{}" width="40" />'.format(object.photo.url))
+
+    list_display = ('headline','myphoto','button_text','link_button')
+    # list_display_links=('first_name','id','role')
+    
+
+
+admin.site.register(Slider, SliderAdmin)
 admin.site.register(Team, TeamAdmin)

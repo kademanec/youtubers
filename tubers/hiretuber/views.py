@@ -1,6 +1,8 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
+from youtubers.models import Youtuber
 from hiretuber.models import Hiretuber
 from django.contrib import messages
+
 # # Create your views here.
 # first_name= models.CharField(max_length=255)
 #     last_name= models.CharField(max_length=255)
@@ -29,5 +31,15 @@ def hiretuber(request):
         hiretuber.save()
         messages.success(request,'Thanks for reaching out!')
         return redirect('youtubers')
+
+
+def youtubers_detail(request, id):
+    print("hellooo")
+    tuber = get_object_or_404(Youtuber,pk=id)
+    data = {
+        'tuber':tuber
+    }
+    
+    return render(request,'youtubers/youtuber_detail.html',data)
       
 
