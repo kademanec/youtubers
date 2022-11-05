@@ -25,7 +25,7 @@ $(document).ready(function () {
 	$('.top').slick({
 		dots: false,
 		infinite: true,
-		speed: 200,
+		speed: 700,
 		slidesToShow: 1,
 		autoplay: true,
 		arrows: true,
